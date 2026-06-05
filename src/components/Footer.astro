@@ -1,0 +1,33 @@
+---
+const links = [
+  { href: '/boards', label: 'Boards' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/inquiry', label: 'Request a Board' },
+];
+---
+
+<footer class="border-t border-harbor/10 bg-ink pb-24 pt-14 text-white lg:pb-14">
+  <div class="container-page grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div>
+      <p class="font-serif text-4xl font-semibold">Coastal Cravings</p>
+      <p class="mt-3 max-w-sm text-white/70">Rooted by the shore. Built for the table.</p>
+    </div>
+    <div>
+      <p class="text-sm font-bold uppercase text-tide">Contact</p>
+      <div class="mt-4 space-y-2 text-sm text-white/75">
+        <a class="block hover:text-white" href="https://www.instagram.com/coastalcravingsma/">@coastalcravingsma</a>
+        <a class="block hover:text-white" href="mailto:hello@coastalcravingsma.com">hello@coastalcravingsma.com</a>
+        <p>Scituate and the South Shore</p>
+      </div>
+    </div>
+    <div>
+      <p class="text-sm font-bold uppercase text-tide">Explore</p>
+      <nav class="mt-4 grid gap-2 text-sm text-white/75" aria-label="Footer navigation">
+        {links.map((link) => (
+          <a class="hover:text-white" href={link.href}>{link.label}</a>
+        ))}
+      </nav>
+    </div>
+  </div>
+</footer>

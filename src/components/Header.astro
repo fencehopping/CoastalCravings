@@ -1,0 +1,74 @@
+---
+const navItems = [
+  { href: '/boards', label: 'Boards' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/how-it-works', label: 'How It Works' },
+  { href: '/faq', label: 'FAQ' },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-harbor/10 bg-cream/90 backdrop-blur">
+  <div class="container-page flex h-20 items-center justify-between">
+    <a href="/" class="focus-ring rounded-md">
+      <span class="block font-serif text-3xl font-semibold leading-none text-harbor">Coastal Cravings</span>
+      <span class="text-xs font-semibold uppercase text-driftwood">South Shore, MA</span>
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
+      {navItems.map((item) => (
+        <a class="focus-ring rounded-md text-sm font-semibold text-ink/75 transition hover:text-harbor" href={item.href}>
+          {item.label}
+        </a>
+      ))}
+      <a class="focus-ring rounded-full bg-harbor px-5 py-3 text-sm font-semibold text-white transition hover:bg-ink" href="/inquiry">
+        Request a Board
+      </a>
+    </nav>
+
+    <button
+      class="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-harbor/15 bg-white/65 text-harbor lg:hidden"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      data-menu-button
+    >
+      <span class="sr-only">Menu</span>
+      <span class="relative block h-4 w-5" aria-hidden="true">
+        <span class="absolute left-0 top-0 h-0.5 w-5 rounded bg-current"></span>
+        <span class="absolute left-0 top-1.5 h-0.5 w-5 rounded bg-current"></span>
+        <span class="absolute bottom-0 left-0 h-0.5 w-5 rounded bg-current"></span>
+      </span>
+    </button>
+  </div>
+
+  <div class="hidden border-t border-harbor/10 bg-cream px-5 pb-5 lg:hidden" data-mobile-menu>
+    <nav class="container-page flex flex-col gap-2 py-4" aria-label="Mobile navigation">
+      {navItems.map((item) => (
+        <a class="rounded-lg px-4 py-3 text-base font-semibold text-ink hover:bg-white/70" href={item.href}>
+          {item.label}
+        </a>
+      ))}
+      <a class="rounded-lg bg-harbor px-4 py-3 text-center text-base font-semibold text-white" href="/inquiry">
+        Request a Board
+      </a>
+    </nav>
+  </div>
+</header>
+
+<a
+  href="/inquiry"
+  class="focus-ring fixed bottom-4 left-4 right-4 z-50 rounded-full bg-harbor px-5 py-4 text-center text-sm font-bold text-white shadow-soft lg:hidden"
+>
+  Request a Board
+</a>
+
+<script>
+  const button = document.querySelector('[data-menu-button]');
+  const menu = document.querySelector('[data-mobile-menu]');
+
+  button?.addEventListener('click', () => {
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!isOpen));
+    menu?.classList.toggle('hidden', isOpen);
+  });
+</script>

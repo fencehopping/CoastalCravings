@@ -1,0 +1,28 @@
+---
+const steps = [
+  {
+    title: 'Tell us about your gathering',
+    copy: 'Share your date, guest count, location, and the kind of board or spread you are imagining.',
+  },
+  {
+    title: 'We confirm the details',
+    copy: 'We will reply with availability, recommended sizing, pricing, and pickup or delivery options.',
+  },
+  {
+    title: 'Enjoy your spread',
+    copy: 'Your board is prepared fresh, styled beautifully, and ready for the table.',
+  },
+];
+---
+
+<div class="grid gap-5 md:grid-cols-3">
+  {steps.map((step, index) => (
+    <article class="rounded-lg border border-harbor/10 bg-white/75 p-6 shadow-sm">
+      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-harbor font-serif text-2xl font-semibold text-white">
+        {index + 1}
+      </span>
+      <h3 class="mt-6 font-serif text-3xl font-semibold leading-tight text-ink">{step.title}</h3>
+      <p class="mt-3 text-sm leading-6 text-ink/68">{step.copy}</p>
+    </article>
+  ))}
+</div>

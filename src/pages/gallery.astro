@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import GalleryGrid from '../components/GalleryGrid.astro';
+import { galleryCategories } from '../data/gallery';
+---
+
+<Layout title="Gallery | Coastal Cravings">
+  <section class="bg-shell py-16 sm:py-24">
+    <div class="container-page">
+      <SectionHeading
+        eyebrow="Gallery"
+        title="Boards, boxes, tables, and seasonal spreads"
+        copy="A growing lookbook for South Shore gatherings, from beach nights to showers and holidays."
+      />
+      <div class="mt-8 flex flex-wrap gap-2">
+        {galleryCategories.map((category) => (
+          <span class="rounded-full border border-harbor/15 bg-white/70 px-4 py-2 text-sm font-semibold text-harbor">{category}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24">
+    <div class="container-page">
+      <GalleryGrid />
+    </div>
+  </section>
+</Layout>

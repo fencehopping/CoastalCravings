@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import OfferingCard from '../components/OfferingCard.astro';
+import CTASection from '../components/CTASection.astro';
+import { offerings } from '../data/offerings';
+---
+
+<Layout title="Boards & Offerings | Coastal Cravings">
+  <section class="bg-shell py-16 sm:py-24">
+    <div class="container-page">
+      <SectionHeading
+        eyebrow="Boards & Offerings"
+        title="Charcuterie boards sized for your table"
+        copy="Choose a starting point, then share the details. Each board can be customized by season, style, guest count, and occasion."
+      />
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24">
+    <div class="container-page grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+      {offerings.map((offering) => <OfferingCard offering={offering} />)}
+    </div>
+  </section>
+
+  <CTASection />
+</Layout>

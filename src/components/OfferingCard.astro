@@ -1,0 +1,31 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+  offering: {
+    name: string;
+    slug: string;
+    image: string;
+    description: string;
+    price: string;
+    serves: string;
+  };
+}
+
+const { offering } = Astro.props;
+---
+
+<article class="group overflow-hidden rounded-lg border border-harbor/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+  <a href={`/inquiry?offering=${offering.slug}`} class="block">
+    <img class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]" src={offering.image} alt={`${offering.name} charcuterie board`} loading="lazy" />
+  </a>
+  <div class="p-6">
+    <div class="mb-5 flex items-center justify-between gap-4 text-sm">
+      <span class="rounded-full bg-shell px-3 py-1 font-semibold text-harbor">Serves {offering.serves}</span>
+      <span class="font-semibold text-cranberry">{offering.price}</span>
+    </div>
+    <h3 class="font-serif text-3xl font-semibold leading-tight text-ink">{offering.name}</h3>
+    <p class="mt-3 min-h-20 text-sm leading-6 text-ink/68">{offering.description}</p>
+    <Button class="mt-6 w-full" href={`/inquiry?offering=${offering.slug}`} variant="secondary">Inquire about this</Button>
+  </div>
+</article>

@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<Layout title="How It Works | Coastal Cravings">
+  <section class="bg-shell py-16 sm:py-24">
+    <div class="container-page">
+      <SectionHeading
+        eyebrow="How it works"
+        title="From first note to ready-for-the-table"
+        copy="A lightweight inquiry process helps confirm availability, recommend sizing, and make sure the board fits the moment."
+      />
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24">
+    <div class="container-page">
+      <HowItWorks />
+    </div>
+  </section>
+
+  <section class="bg-shell py-16">
+    <div class="container-page grid gap-8 lg:grid-cols-2">
+      <img class="aspect-[4/3] rounded-lg object-cover shadow-soft" src="/images/grazing-table.jpg" alt="Styled grazing table for a special event" />
+      <div class="self-center">
+        <p class="text-xs font-bold uppercase text-cranberry">Local details matter</p>
+        <h2 class="mt-3 font-serif text-4xl font-semibold leading-tight text-ink">Pickup, delivery, setup, and styling are confirmed before booking.</h2>
+        <p class="mt-4 leading-7 text-ink/68">
+          Share your town, timing, guest count, and venue notes. We will confirm what works for your date and recommend the best format for your gathering.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</Layout>

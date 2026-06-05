@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<Layout title="FAQ | Coastal Cravings">
+  <section class="bg-shell py-16 sm:py-24">
+    <div class="container-page">
+      <SectionHeading
+        eyebrow="FAQ"
+        title="Helpful details before you inquire"
+        copy="A few common planning questions about timing, delivery, dietary notes, deposits, and larger events."
+      />
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24">
+    <div class="container-page max-w-4xl">
+      <FAQAccordion />
+    </div>
+  </section>
+
+  <CTASection />
+</Layout>

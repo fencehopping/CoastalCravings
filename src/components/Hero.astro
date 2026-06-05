@@ -1,0 +1,35 @@
+---
+import Button from './Button.astro';
+---
+
+<section class="overflow-hidden bg-shell">
+  <div class="container-page grid min-h-[calc(100vh-5rem)] items-center gap-12 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:py-16">
+    <div>
+      <p class="mb-4 text-xs font-bold uppercase text-cranberry">Rooted by the shore. Built for the table.</p>
+      <h1 class="font-serif text-5xl font-semibold leading-[0.95] text-ink sm:text-6xl lg:text-7xl">
+        Artfully styled charcuterie boards for South Shore gatherings.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-ink/72">
+        From beach nights and birthdays to showers, holidays, and corporate events - custom spreads made to gather around.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <Button href="/inquiry">Request a Board</Button>
+        <Button href="/boards" variant="secondary">View the Boards</Button>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="absolute -left-6 top-8 hidden h-28 w-28 rounded-full border border-harbor/15 bg-white/35 lg:block"></div>
+      <img
+        class="relative aspect-[4/5] w-full rounded-lg object-cover shadow-soft sm:aspect-[5/4] lg:aspect-[4/5]"
+        src="/images/board-hero.jpg"
+        alt="Artfully styled coastal charcuterie board with cheeses, fruit, crackers, and herbs"
+        loading="eager"
+      />
+      <div class="absolute bottom-5 left-5 right-5 rounded-lg border border-white/45 bg-white/80 p-4 shadow-sm backdrop-blur">
+        <p class="font-serif text-2xl font-semibold text-harbor">Custom boards, boxes, and grazing tables</p>
+        <p class="mt-1 text-sm text-ink/65">Made for Scituate, the South Shore, and the people around your table.</p>
+      </div>
+    </div>
+  </div>
+</section>
