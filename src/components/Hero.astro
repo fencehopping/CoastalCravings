@@ -1,5 +1,6 @@
 ---
 import Button from './Button.astro';
+import { withBase } from '../utils/path';
 ---
 
 <section class="overflow-hidden bg-shell">
@@ -22,7 +23,7 @@ import Button from './Button.astro';
       <div class="absolute -left-6 top-8 hidden h-28 w-28 rounded-full border border-harbor/15 bg-white/35 lg:block"></div>
       <img
         class="relative aspect-[4/5] w-full rounded-lg object-cover shadow-soft sm:aspect-[5/4] lg:aspect-[4/5]"
-        src="/images/board-hero.jpg"
+        src={withBase('/images/board-hero.jpg')}
         alt="Artfully styled coastal charcuterie board with cheeses, fruit, crackers, and herbs"
         loading="eager"
       />

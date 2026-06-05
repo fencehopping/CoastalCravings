@@ -1,5 +1,6 @@
 ---
 import Button from './Button.astro';
+import { withBase } from '../utils/path';
 
 interface Props {
   offering: {
@@ -16,8 +17,8 @@ const { offering } = Astro.props;
 ---
 
 <article class="group overflow-hidden rounded-lg border border-harbor/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
-  <a href={`/inquiry?offering=${offering.slug}`} class="block">
-    <img class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]" src={offering.image} alt={`${offering.name} charcuterie board`} loading="lazy" />
+  <a href={withBase(`/inquiry?offering=${offering.slug}`)} class="block">
+    <img class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]" src={withBase(offering.image)} alt={`${offering.name} charcuterie board`} loading="lazy" />
   </a>
   <div class="p-6">
     <div class="mb-5 flex items-center justify-between gap-4 text-sm">

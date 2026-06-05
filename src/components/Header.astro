@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/path';
+
 const navItems = [
   { href: '/boards', label: 'Boards' },
   { href: '/gallery', label: 'Gallery' },
@@ -9,18 +11,18 @@ const navItems = [
 
 <header class="sticky top-0 z-40 border-b border-harbor/10 bg-cream/90 backdrop-blur">
   <div class="container-page flex h-20 items-center justify-between">
-    <a href="/" class="focus-ring rounded-md">
+    <a href={withBase('/')} class="focus-ring rounded-md">
       <span class="block font-serif text-3xl font-semibold leading-none text-harbor">Coastal Cravings</span>
       <span class="text-xs font-semibold uppercase text-driftwood">South Shore, MA</span>
     </a>
 
     <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
       {navItems.map((item) => (
-        <a class="focus-ring rounded-md text-sm font-semibold text-ink/75 transition hover:text-harbor" href={item.href}>
+        <a class="focus-ring rounded-md text-sm font-semibold text-ink/75 transition hover:text-harbor" href={withBase(item.href)}>
           {item.label}
         </a>
       ))}
-      <a class="focus-ring rounded-full bg-harbor px-5 py-3 text-sm font-semibold text-white transition hover:bg-ink" href="/inquiry">
+      <a class="focus-ring rounded-full bg-harbor px-5 py-3 text-sm font-semibold text-white transition hover:bg-ink" href={withBase('/inquiry')}>
         Request a Board
       </a>
     </nav>
@@ -44,11 +46,11 @@ const navItems = [
   <div class="hidden border-t border-harbor/10 bg-cream px-5 pb-5 lg:hidden" data-mobile-menu>
     <nav class="container-page flex flex-col gap-2 py-4" aria-label="Mobile navigation">
       {navItems.map((item) => (
-        <a class="rounded-lg px-4 py-3 text-base font-semibold text-ink hover:bg-white/70" href={item.href}>
+        <a class="rounded-lg px-4 py-3 text-base font-semibold text-ink hover:bg-white/70" href={withBase(item.href)}>
           {item.label}
         </a>
       ))}
-      <a class="rounded-lg bg-harbor px-4 py-3 text-center text-base font-semibold text-white" href="/inquiry">
+      <a class="rounded-lg bg-harbor px-4 py-3 text-center text-base font-semibold text-white" href={withBase('/inquiry')}>
         Request a Board
       </a>
     </nav>
@@ -56,7 +58,7 @@ const navItems = [
 </header>
 
 <a
-  href="/inquiry"
+  href={withBase('/inquiry')}
   class="focus-ring fixed bottom-4 left-4 right-4 z-50 rounded-full bg-harbor px-5 py-4 text-center text-sm font-bold text-white shadow-soft lg:hidden"
 >
   Request a Board

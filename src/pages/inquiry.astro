@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import InquiryForm from '../components/InquiryForm.astro';
+import { withBase } from '../utils/path';
 ---
 
 <Layout title="Request a Board | Coastal Cravings">
@@ -14,7 +15,7 @@ import InquiryForm from '../components/InquiryForm.astro';
           copy="Share your date, guest count, town, and the type of spread you have in mind. This form is structured for a future Tally, Fillout, Airtable, Resend, or serverless endpoint."
         />
         <div class="mt-8 overflow-hidden rounded-lg border border-harbor/10 bg-white shadow-sm">
-          <img class="aspect-[4/3] w-full object-cover" src="/images/charcuterie-box.jpg" alt="Coastal charcuterie box with fruit, cheese, crackers, and sweets" />
+          <img class="aspect-[4/3] w-full object-cover" src={withBase('/images/charcuterie-box.jpg')} alt="Coastal charcuterie box with fruit, cheese, crackers, and sweets" />
         </div>
       </div>
       <InquiryForm />

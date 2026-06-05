@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/path';
+
 interface Props {
   href?: string;
   variant?: 'primary' | 'secondary' | 'ghost';
@@ -7,6 +9,7 @@ interface Props {
 }
 
 const { href, variant = 'primary', class: className = '', type = 'button' } = Astro.props;
+const resolvedHref = href ? withBase(href) : undefined;
 
 const variants = {
   primary: 'bg-harbor text-white shadow-sm hover:bg-ink',
@@ -18,8 +21,8 @@ const classes = `focus-ring inline-flex min-h-11 items-center justify-center rou
 ---
 
 {
-  href ? (
-    <a href={href} class={classes}>
+  resolvedHref ? (
+    <a href={resolvedHref} class={classes}>
       <slot />
     </a>
   ) : (

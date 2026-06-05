@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/path';
+
 const links = [
   { href: '/boards', label: 'Boards' },
   { href: '/gallery', label: 'Gallery' },
@@ -25,7 +27,7 @@ const links = [
       <p class="text-sm font-bold uppercase text-tide">Explore</p>
       <nav class="mt-4 grid gap-2 text-sm text-white/75" aria-label="Footer navigation">
         {links.map((link) => (
-          <a class="hover:text-white" href={link.href}>{link.label}</a>
+          <a class="hover:text-white" href={withBase(link.href)}>{link.label}</a>
         ))}
       </nav>
     </div>
